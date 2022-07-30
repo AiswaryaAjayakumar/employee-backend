@@ -6,9 +6,7 @@ const { employeeModel } = require('./models/employeeModel')
 
 var app=express()
 
-app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use(bodyParser.json())
 
 app.get('/',(req,res)=>{
 
@@ -23,3 +21,6 @@ app.listen(process.env.POST||3003,()=>{
 
     console.log("Server started at http://localhost:3003/")
 })
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(bodyParser.json())
